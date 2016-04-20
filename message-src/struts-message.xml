@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="message" extends="default" namespace="/message">
+		
+		<action name="IncomingMessageAction_*" method="{1}" class="com.mpe.message.action.IncomingMessageAction">
+			<result name="success">/pages/message/incomingMessage/{1}.jsp</result>
+			<result name="input">/pages/message/incomingMessage/${previousPage}.jsp</result>
+			<result name="redirect" type="redirect">${mappedRequest}</result>
+		</action>
+		
+		<action name="OutgoingMessageAction_*" method="{1}" class="com.mpe.message.action.OutgoingMessageAction">
+			<result name="success">/pages/message/outgoingMessage/{1}.jsp</result>
+			<result name="input">/pages/message/outgoingMessage/${previousPage}.jsp</result>
+			<result name="redirect" type="redirect">${mappedRequest}</result>
+		</action>
+		
+		<action name="OutgoingEmailAction_*" method="{1}" class="com.mpe.message.action.OutgoingEmailAction">
+			<result name="success">/pages/message/outgoingEmail/{1}.jsp</result>
+			<result name="input">/pages/message/outgoingEmail/${previousPage}.jsp</result>
+			<result name="redirect" type="redirect">${mappedRequest}</result>
+		</action>
+      
+	</package>
+   
+   
+</struts>

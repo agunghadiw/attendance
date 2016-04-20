@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="attendance-1.0">
+		<class>com.mpe.basic.model.Address</class>
+		<class>com.mpe.basic.model.ApplicationSetup</class>
+		<class>com.mpe.basic.model.Branch</class>
+		<class>com.mpe.basic.model.BranchClass</class>
+		<class>com.mpe.basic.model.BranchType</class>
+		<class>com.mpe.basic.model.Contact</class>
+		<class>com.mpe.basic.model.Location</class>
+		<class>com.mpe.basic.model.LocationOther</class>
+		<class>com.mpe.basic.model.Lookup</class>
+		<class>com.mpe.basic.model.Organization</class>
+		<class>com.mpe.basic.model.OrganizationSetup</class>
+		<class>com.mpe.basic.model.Permission</class>
+		<class>com.mpe.basic.model.RegisteredDevice</class>
+		<class>com.mpe.basic.model.Role</class>
+		<class>com.mpe.basic.model.RunningNumber</class>
+		<class>com.mpe.basic.model.Status</class>
+		<class>com.mpe.basic.model.UniqueNumber</class>
+		<class>com.mpe.basic.model.User</class>
+		<class>com.mpe.basic.model.UserActivity</class>
+		<class>com.mpe.basic.model.UserDelegation</class>
+		<class>com.mpe.basic.model.UserPasswordHistory</class>
+		<class>com.mpe.basic.model.UserSecugen</class>
+		<class>com.mpe.basic.model.UserSecurityQuestion</class>
+		<class>com.mpe.basic.model.WorkOffDay</class>
+		<class>com.mpe.message.model.IncomingMessage</class>
+		<class>com.mpe.message.model.OutgoingEmail</class>
+		<class>com.mpe.message.model.OutgoingMessage</class>
+		<class>com.mpe.upload.model.UploadFile</class>
+		<class>com.mpe.workflow.model.PreviousProcess</class>
+		<class>com.mpe.workflow.model.Process</class>
+		<class>com.mpe.workflow.model.Workflow</class>
+	</persistence-unit>
+</persistence>

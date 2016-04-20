@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<package name="soap" extends="default" namespace="/soap">
+		
+		<action name="EmployeeJsonAction_*" method="{1}" class="com.depsos.soap.action.EmployeeJsonAction">
+			<interceptor-ref name="paramsPrepareParamsStack"/>
+			<interceptor-ref name="defaultStack"/>
+			<result name="findByFullNameSuccess" type="json"><param name="noCache">true</param></result>
+			<result name="findByUserNameSuccess" type="json"><param name="noCache">true</param></result>
+		</action>
+		
+		<action name="ProcessJsonAction_*" method="{1}" class="com.depsos.soap.action.ProcessJsonAction">
+			<interceptor-ref name="paramsPrepareParamsStack"/>
+			<interceptor-ref name="defaultStack"/>
+			<result name="previousProcessSuccess" type="json"><param name="noCache">true</param></result>
+		</action>
+		
+		<action name="PositionJsonAction_*" method="{1}" class="com.depsos.soap.action.PositionJsonAction">
+			<interceptor-ref name="paramsPrepareParamsStack"/>
+			<interceptor-ref name="defaultStack"/>
+			<result name="degreeByPositionSuccess" type="json"><param name="noCache">true</param></result>
+		</action>
+		
+		<action name="AttendanceMachineJsonAction_*" method="{1}" class="com.depsos.soap.action.AttendanceMachineJsonAction">
+			<interceptor-ref name="paramsPrepareParamsStack"/>
+			<interceptor-ref name="defaultStack"/>
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="pingJsonSuccess" type="json"><param name="noCache">true</param></result>
+			<result name="restartJsonSuccess" type="json"><param name="noCache">true</param></result>
+			<result name="saveJsonSuccess" type="json"><param name="noCache">true</param></result>
+		</action>
+		
+      
+	</package>
+   
+</struts>

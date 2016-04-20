@@ -1,0 +1,126 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="SOSPED">
+		 
+		
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>		
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/dbattendance_1_0?autoReconnect=true</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">postgres</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		
+		
+		<!-- 
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>		
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/dbattendance_1_0?autoReconnect=true</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">admin</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		-->
+		
+		<property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">1</property>
+		<property name="hibernate.c3p0.max_statements">10</property>
+		<property name="hibernate.c3p0.timeout">600</property>
+		<property name="hibernate.c3p0.idle_test_period">300</property>
+		<property name="hibernate.c3p0.acquireRetryDelay">1000</property>
+	  	<property name="hibernate.c3p0.acquireRetryAttempts">60</property>	  
+	  	<!--
+	  	<property name="hibernate.c3p0.numHelperThreads">0</property>
+		--> 
+		 
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.jdbc.batch_size">20</property>
+		<property name="hibernate.order_inserts">true</property>
+		<property name="hibernate.order_updates">true</property>
+		
+		<property name="hibernate.max_fetch_depth">2</property>
+		<property name="hibernate.default_batch_fetch_size">16</property>
+		
+		<!--
+		<property name="hibernate.format_sql">true</property>
+		-->
+		<property name="hibernate.hbm2ddl.auto">update</property>		
+		<property name="current_session_context_class">thread</property>
+		
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		
+		<!-- 2nd level cache -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+	  <property name="hibernate.cache.provider_configuration_file_resource_path">/ehcache.xml</property>
+	  <property name="hibernate.cache.use_query_cache">true</property>
+	  <property name="hibernate.cache.use_structured_entries">true</property>
+	  <property name="hibernate.cache.use_second_level_cache">true</property>
+	   
+	  <property name="hibernate.generate_statistics">false</property>
+		
+		<!--  auto/none/callback/ddl -->
+		<property name="javax.persistence.validation.mode">auto</property>   
+		 
+		<!-- List of annotated classes-->
+		
+		<!-- basic -->
+		<mapping class="com.mpe.basic.model.ApplicationSetup"/>
+		<mapping class="com.mpe.basic.model.Lookup"/>
+		<mapping class="com.mpe.basic.model.Organization"/>
+		<mapping class="com.mpe.basic.model.OrganizationSetup"/>
+		<mapping class="com.mpe.basic.model.RegisteredDevice"/>
+		<mapping class="com.mpe.basic.model.Role"/>
+		<mapping class="com.mpe.basic.model.RunningNumber"/>
+		<mapping class="com.mpe.basic.model.Status"/>		
+		<mapping class="com.mpe.basic.model.User"/>
+		<mapping class="com.mpe.basic.model.UserPasswordHistory"/>
+		<mapping class="com.mpe.basic.model.UserActivity"/>
+		<mapping class="com.mpe.basic.model.UserDelegation"/>
+		<mapping class="com.mpe.basic.model.UserSecurityQuestion"/>
+		<mapping class="com.mpe.basic.model.Permission"/>
+		<mapping class="com.mpe.basic.model.WorkOffDay"/>		
+		<mapping class="com.mpe.basic.model.Address"/>
+		<mapping class="com.mpe.basic.model.Branch"/>
+		<mapping class="com.mpe.basic.model.BranchClass"/>
+		<mapping class="com.mpe.basic.model.BranchType"/>
+		<mapping class="com.mpe.basic.model.Contact"/>
+		<mapping class="com.mpe.basic.model.Location"/>
+		<mapping class="com.mpe.basic.model.LocationOther"/>
+		
+		<mapping class="com.mpe.message.model.OutgoingEmail"/>
+		
+		<mapping class="com.mpe.workflow.model.Process"/>
+		<mapping class="com.mpe.workflow.model.Workflow"/>
+		<mapping class="com.mpe.workflow.model.PreviousProcess"/>
+		
+		<mapping class="com.depsos.hr.model.AttendanceMachine"/>
+		<mapping class="com.depsos.hr.model.Degree"/>
+		<mapping class="com.depsos.hr.model.Echelon"/>
+		<mapping class="com.depsos.hr.model.EchelonApprovalFlow"/>
+		<mapping class="com.depsos.hr.model.Employee"/>
+		<mapping class="com.depsos.hr.model.EmployeeAttendance"/>
+		<mapping class="com.depsos.hr.model.EmployeeAttendanceDeduction"/>
+		<mapping class="com.depsos.hr.model.EmployeeKpi"/>
+		<mapping class="com.depsos.hr.model.EmployeeLeave"/>
+		<mapping class="com.depsos.hr.model.EmployeeLeaveProcess"/>
+		<mapping class="com.depsos.hr.model.EmployeeLeaveBeginning"/>
+		<mapping class="com.depsos.hr.model.EmployeeLoan"/>
+		<mapping class="com.depsos.hr.model.EmployeeLoanPayment"/>
+		<mapping class="com.depsos.hr.model.EmployeeOutOfTownDuty"/>
+		<mapping class="com.depsos.hr.model.EmployeeAttendanceAllowanceMonthly"/>
+		<mapping class="com.depsos.hr.model.EmployeeAttendanceAllowanceMonthlyDetail"/>
+		<mapping class="com.depsos.hr.model.EmployeeAttendanceAllowanceMonthlyProcess"/>
+		<mapping class="com.depsos.hr.model.EmployeeAttendanceAllowanceMonthlyReq"/>
+		<mapping class="com.depsos.hr.model.Grade"/>
+		<mapping class="com.depsos.hr.model.GradeDegreeLevel"/>
+		<mapping class="com.depsos.hr.model.KpiPeriode"/>
+		<mapping class="com.depsos.hr.model.LeaveDeduction"/>
+		<mapping class="com.depsos.hr.model.LeavePolicy"/>
+		<mapping class="com.depsos.hr.model.Position"/>
+		<mapping class="com.depsos.hr.model.Rating"/>
+		<mapping class="com.depsos.hr.model.WorkingShift"/>
+		<mapping class="com.depsos.hr.model.TataUsahaEmployee"/>
+    
+		
+		
+	</session-factory>
+</hibernate-configuration>
